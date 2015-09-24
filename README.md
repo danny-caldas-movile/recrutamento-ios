@@ -9,13 +9,13 @@ Use o mockup abaixo como exemplo:
 
 # Requisitos
 
-* O projeto deve compilar sem erros / warnings na versão 6.3.x do Xcode.
+* O projeto deve compilar sem erros / warnings na versão 7.0.x do Xcode.
 
-* O projeto deve suportar iOS 8 e será testado na versão mais recente do iOS.
+* O projeto deve suportar iOS 9 e será testado na versão mais recente do iOS.
 
 * É permitido o uso de bibliotecas externas, assim como gerenciadores de dependências.
 
-* É necessário possuir pelo menos uma classe em Swift.
+* É necessário possuir pelo menos uma classe em Swift 2.0.
 
 * As telas devem ser feitas com Auto Layout e não podem apresentar logs de erro no console.
 
@@ -28,13 +28,15 @@ Use o mockup abaixo como exemplo:
 
 * Tratamento de cenários de erro (falta de conexão com a internet, indisponibilidade do servidor, etc)
 
-* Aplicativo inteiramente desenvolvido em Swift
+* Aplicativo inteiramente desenvolvido em Swift 2.0
 
 * Pull to refresh
 
 * App universal
 
 * Testes Unitários
+
+* Testes de UI
 
 # Submissão
 
