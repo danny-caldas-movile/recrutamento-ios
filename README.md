@@ -9,7 +9,7 @@ Use o mockup abaixo como exemplo:
 
 # Requisitos
 
-* O projeto deve compilar sem erros / warnings na versão 7.0.x do Xcode.
+* O projeto deve compilar sem erros / warnings na versão atual do Xcode na App Store.
 
 * O projeto deve suportar iOS 9 e será testado na versão mais recente do iOS.
 
@@ -18,8 +18,6 @@ Use o mockup abaixo como exemplo:
 * É necessário possuir pelo menos uma classe em Swift 2.0.
 
 * As telas devem ser feitas com Auto Layout e não podem apresentar logs de erro no console.
-
-* A prova foi pensada para ser feita em no máximo 2 horas, não irá adicionar para a avaliação, o desenvolvimento de funcionalidades adicionais.
 
 * Provavelmente faremos perguntas sobre o seu código, não saia colando tudo do Stack Overflow :)
 
