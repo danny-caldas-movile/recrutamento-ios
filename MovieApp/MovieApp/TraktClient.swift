@@ -26,26 +26,26 @@ class TraktClient {
         manager = Manager(configuration: configuration)
     }
     
-    func getMovies(completionHandler: () -> ()){
+    func getMovies(completionHandler:  (([Movie]) -> ())){
         
         let router = Router.GetMovies
         manager.request(router).responseJSON { response in
+            
+            var movies = [Movie]()
             
             if let info = response.result.value {
                 
                 let json = JSON(info)
                 
                 print(json)
+                movies = Movie.decodeArray(json)
                 
             } else {
                 print(response.result.error.debugDescription)
             }
-
-            
+            completionHandler(movies)
         }
-        
     }
-    
 }
 
 private enum Router: URLRequestConvertible {
@@ -61,9 +61,7 @@ private enum Router: URLRequestConvertible {
             switch self {
             case .GetMovies:
                 
-                let myParameters = ["start_date": "2015-11-01", "days": "7"];
-                
-                return ("calendars/all/movies", myParameters,  .GET)
+                return ("movies/trending", ["extended": "images"],  .GET)
             }
         }()
         
@@ -74,5 +72,4 @@ private enum Router: URLRequestConvertible {
         let encoding = Alamofire.ParameterEncoding.URL
         return encoding.encode(urlRequest, parameters: parameters).0
     }
-    
 }

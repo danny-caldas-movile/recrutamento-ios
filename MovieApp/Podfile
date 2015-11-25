@@ -9,6 +9,7 @@ target 'MovieApp' do
     
     pod 'Alamofire'
     pod 'SwiftyJSON'
+    pod 'PINRemoteImage'
 
 end
 

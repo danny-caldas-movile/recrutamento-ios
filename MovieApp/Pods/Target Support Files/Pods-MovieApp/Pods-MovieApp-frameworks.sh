@@ -83,9 +83,15 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-MovieApp/Alamofire.framework"
+  install_framework "Pods-MovieApp/FLAnimatedImage.framework"
+  install_framework "Pods-MovieApp/PINCache.framework"
+  install_framework "Pods-MovieApp/PINRemoteImage.framework"
   install_framework "Pods-MovieApp/SwiftyJSON.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-MovieApp/Alamofire.framework"
+  install_framework "Pods-MovieApp/FLAnimatedImage.framework"
+  install_framework "Pods-MovieApp/PINCache.framework"
+  install_framework "Pods-MovieApp/PINRemoteImage.framework"
   install_framework "Pods-MovieApp/SwiftyJSON.framework"
 fi
