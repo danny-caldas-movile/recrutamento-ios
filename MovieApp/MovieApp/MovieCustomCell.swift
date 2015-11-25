@@ -20,7 +20,9 @@ class MovieCustomCell: UICollectionViewCell {
     }
     
     func loadCellForObject(movie: Movie) {
-        posterImageView.pin_setImageFromURL(movie.thumbnail)
+        //posterImageView.pin_setImageFromURL(movie.thumbnail)
+        posterImageView.tintColor = UIColor.lightGrayColor()
+        posterImageView.pin_setImageFromURL(movie.thumbnail, placeholderImage: UIImage(named: "tvShow"))
         nameLabel.text = movie.name;
         self.backgroundColor = UIColor.whiteColor()
     }

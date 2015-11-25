@@ -63,7 +63,6 @@ private enum Router: URLRequestConvertible {
             switch self {
             case .GetMovies:
                 
-                
                 let calendar = NSCalendar.currentCalendar()
                 let day = calendar.component(.Day, fromDate: NSDate())
                 let month = calendar.component(.Month, fromDate: NSDate())

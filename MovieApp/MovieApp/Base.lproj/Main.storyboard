@@ -29,7 +29,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="181" height="239"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B3G-dM-0pZ">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B3G-dM-0pZ">
                                             <rect key="frame" x="27" y="17" width="127" height="181"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oq9-oc-egw">
@@ -63,7 +63,6 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Show" id="mFz-qK-CyL"/>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wao-sZ-QTj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -74,7 +73,6 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="35A-Br-gnz" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Tee-yd-xvA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -85,7 +83,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="tLg-xC-6T1" kind="relationship" relationship="rootViewController" id="ZZ2-iV-Xl0"/>
+                        <segue destination="tLg-xC-6T1" kind="relationship" relationship="rootViewController" id="CNG-JK-fUC"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YkJ-Yh-xr3" userLabel="First Responder" sceneMemberID="firstResponder"/>

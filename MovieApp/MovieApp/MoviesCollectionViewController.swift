@@ -18,8 +18,7 @@ class MoviesCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.setNeedsStatusBarAppearanceUpdate()
+
         
         createRefreshControl()
         
@@ -73,10 +72,14 @@ class MoviesCollectionViewController: UICollectionViewController {
         
         client.getMovies { movies in
             self.moviesDatasource = movies
+            
             self.collectionView?.reloadData()
             
             self.refreshControl.endRefreshing()
         }
     }
+    
+
+    
 
 }
