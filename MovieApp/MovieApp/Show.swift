@@ -8,19 +8,20 @@
 
 import SwiftyJSON
 
-struct Movie {
- 
+struct Show {
     let thumbnail: NSURL?
-    let name: String?
+    let title: String!
 }
 
-extension Movie: Decodable {
+extension Show: Decodable {
     
-    static func decode(json: JSON) -> Movie? {
+    static func decode(json: JSON) -> Show? {
         
         let thumbnail = json["show"]["images"]["poster"]["medium"].URL
-        let name = json["show"]["title"].string
+        guard let title = json["show"]["title"].string else {
+            return nil
+        }
         
-        return Movie(thumbnail: thumbnail, name:name);
+        return Show(thumbnail: thumbnail, title:title);
     }
 }

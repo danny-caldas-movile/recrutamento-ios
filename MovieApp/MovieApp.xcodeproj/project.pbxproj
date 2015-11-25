@@ -15,10 +15,10 @@
 		B0F703941C06300D0073D180 /* MovieAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F703931C06300D0073D180 /* MovieAppTests.swift */; };
 		B0F7039F1C06300D0073D180 /* MovieAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F7039E1C06300D0073D180 /* MovieAppUITests.swift */; };
 		B0F703B01C0630CF0073D180 /* TraktClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F703AF1C0630CF0073D180 /* TraktClient.swift */; };
-		B0F703B21C06398E0073D180 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F703B11C06398E0073D180 /* Movie.swift */; };
+		B0F703B21C06398E0073D180 /* Show.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F703B11C06398E0073D180 /* Show.swift */; };
 		B0F703B41C0639EA0073D180 /* Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F703B31C0639EA0073D180 /* Decodable.swift */; };
 		B0F703B61C063D300073D180 /* MoviesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F703B51C063D300073D180 /* MoviesCollectionViewController.swift */; };
-		B0F703B81C063EC10073D180 /* MovieCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F703B71C063EC10073D180 /* MovieCustomCell.swift */; };
+		B0F703B81C063EC10073D180 /* ShowCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F703B71C063EC10073D180 /* ShowCustomCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,10 +55,10 @@
 		B0F7039E1C06300D0073D180 /* MovieAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieAppUITests.swift; sourceTree = "<group>"; };
 		B0F703A01C06300D0073D180 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0F703AF1C0630CF0073D180 /* TraktClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TraktClient.swift; sourceTree = "<group>"; };
-		B0F703B11C06398E0073D180 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		B0F703B11C06398E0073D180 /* Show.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Show.swift; sourceTree = "<group>"; };
 		B0F703B31C0639EA0073D180 /* Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decodable.swift; sourceTree = "<group>"; };
 		B0F703B51C063D300073D180 /* MoviesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesCollectionViewController.swift; sourceTree = "<group>"; };
-		B0F703B71C063EC10073D180 /* MovieCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCustomCell.swift; sourceTree = "<group>"; };
+		B0F703B71C063EC10073D180 /* ShowCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowCustomCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,7 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				B0F703AF1C0630CF0073D180 /* TraktClient.swift */,
-				B0F703B11C06398E0073D180 /* Movie.swift */,
+				B0F703B11C06398E0073D180 /* Show.swift */,
 				B0F703B31C0639EA0073D180 /* Decodable.swift */,
 			);
 			name = Model;
@@ -171,7 +171,7 @@
 		B0F703AE1C0630860073D180 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B0F703B71C063EC10073D180 /* MovieCustomCell.swift */,
+				B0F703B71C063EC10073D180 /* ShowCustomCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -369,10 +369,10 @@
 			files = (
 				B0F703B01C0630CF0073D180 /* TraktClient.swift in Sources */,
 				B0F703B61C063D300073D180 /* MoviesCollectionViewController.swift in Sources */,
-				B0F703B21C06398E0073D180 /* Movie.swift in Sources */,
+				B0F703B21C06398E0073D180 /* Show.swift in Sources */,
 				B0F703B41C0639EA0073D180 /* Decodable.swift in Sources */,
 				B0F7037F1C06300D0073D180 /* AppDelegate.swift in Sources */,
-				B0F703B81C063EC10073D180 /* MovieCustomCell.swift in Sources */,
+				B0F703B81C063EC10073D180 /* ShowCustomCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,18 +14,14 @@ class MoviesCollectionViewController: UICollectionViewController {
     
     let refreshControl = UIRefreshControl()
     
-    var moviesDatasource = [Movie]()
+    var moviesDatasource = [Show]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
         createRefreshControl()
         
-        client.getMovies { movies in
-            self.moviesDatasource = movies
-            self.collectionView?.reloadData()
-        }
+        refreshMovies()
     }
     
     /// Mark - CollectionView DataSource
@@ -39,14 +35,14 @@ class MoviesCollectionViewController: UICollectionViewController {
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        let identifier = "MovieCell"
+        let identifier = "ShowCell"
         
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath) as! MovieCustomCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath) as! ShowCustomCell
         cell.backgroundColor = UIColor.blackColor()
         
-        let movie = self.moviesDatasource[indexPath.row]
+        let show = self.moviesDatasource[indexPath.row]
         
-        cell.loadCellForObject(movie)
+        cell.loadCellForObject(show)
         
         return cell
     }
@@ -70,8 +66,8 @@ class MoviesCollectionViewController: UICollectionViewController {
     
         self.refreshControl.beginRefreshing()
         
-        client.getMovies { movies in
-            self.moviesDatasource = movies
+        client.getMovies { shows in
+            self.moviesDatasource = shows
             
             self.collectionView?.reloadData()
             

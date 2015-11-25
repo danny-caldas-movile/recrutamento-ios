@@ -9,21 +9,20 @@
 import UIKit
 import PINRemoteImage
 
-class MovieCustomCell: UICollectionViewCell {
+class ShowCustomCell: UICollectionViewCell {
     @IBOutlet weak var posterImageView: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     
     override func prepareForReuse() {
         super.prepareForReuse()
         posterImageView.pin_cancelImageDownload()
-        posterImageView.image = nil
     }
     
-    func loadCellForObject(movie: Movie) {
+    func loadCellForObject(show: Show) {
         //posterImageView.pin_setImageFromURL(movie.thumbnail)
         posterImageView.tintColor = UIColor.lightGrayColor()
-        posterImageView.pin_setImageFromURL(movie.thumbnail, placeholderImage: UIImage(named: "tvShow"))
-        nameLabel.text = movie.name;
+        posterImageView.pin_setImageFromURL(show.thumbnail, placeholderImage: UIImage(named: "tvShow"))
+        titleLabel.text = show.title;
         self.backgroundColor = UIColor.whiteColor()
     }
 }
