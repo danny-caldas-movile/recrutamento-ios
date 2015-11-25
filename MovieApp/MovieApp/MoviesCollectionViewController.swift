@@ -19,6 +19,8 @@ class MoviesCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.setNeedsStatusBarAppearanceUpdate()
+        
         createRefreshControl()
         
         client.getMovies { movies in
@@ -50,6 +52,13 @@ class MoviesCollectionViewController: UICollectionViewController {
         return cell
     }
     
+    func collectionView(collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+            
+            return UIEdgeInsets(top: 0.0, left: 20.0, bottom: 20.0, right: 20.0)
+    }
+    
     /// Mark - Refresh Control
     func createRefreshControl(){
         
@@ -68,7 +77,6 @@ class MoviesCollectionViewController: UICollectionViewController {
             
             self.refreshControl.endRefreshing()
         }
-        
     }
-    
+
 }

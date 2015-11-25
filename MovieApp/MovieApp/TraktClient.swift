@@ -41,6 +41,8 @@ class TraktClient {
                 movies = Movie.decodeArray(json)
                 
             } else {
+                
+                
                 print(response.result.error.debugDescription)
             }
             completionHandler(movies)
@@ -60,7 +62,14 @@ private enum Router: URLRequestConvertible {
         let (path, parameters, method): (String, [String : AnyObject]?, Alamofire.Method) = {
             switch self {
             case .GetMovies:
-                return ("calendars/all/shows", ["extended": "images", "start_date":"2015-11-01", "days": "7"],  .GET)
+                
+                
+                let calendar = NSCalendar.currentCalendar()
+                let day = calendar.component(.Day, fromDate: NSDate())
+                let month = calendar.component(.Month, fromDate: NSDate())
+                let year = calendar.component(.Year, fromDate: NSDate())
+                let date = "\(year)-\(month)-\(day)"
+                return ("calendars/all/shows", ["extended": "images", "start_date":date, "days": "1"],  .GET)
             }
         }()
         
