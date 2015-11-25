@@ -51,7 +51,17 @@ class MoviesCollectionViewController: UICollectionViewController {
         layout collectionViewLayout: UICollectionViewLayout,
         insetForSectionAtIndex section: Int) -> UIEdgeInsets {
             
-            return UIEdgeInsets(top: 0.0, left: 20.0, bottom: 20.0, right: 20.0)
+            let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
+            let border = flowLayout.sectionInset.left + flowLayout.sectionInset.right
+            let itemWidth = flowLayout.itemSize.width + flowLayout.minimumInteritemSpacing
+            let totalWidth = collectionView.bounds.width - border
+            let numberOfCells = floor(totalWidth / itemWidth)
+            let usedSpace = itemWidth * numberOfCells
+            let bonusSpace = flowLayout.minimumInteritemSpacing * numberOfCells
+            
+            let edgeInsets = floor((totalWidth - usedSpace + bonusSpace) / (numberOfCells + 1.0))
+            
+            return UIEdgeInsets(top: flowLayout.sectionInset.top, left: edgeInsets, bottom: flowLayout.sectionInset.bottom, right: edgeInsets)
     }
     
     /// Mark - Refresh Control

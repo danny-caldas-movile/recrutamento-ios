@@ -12,6 +12,9 @@ import SwiftyJSON
 
 class TraktClient {
     
+    let clientId = "395ee40b0f30abc5ee38ba3420922a0fa6a1edb15f9529f7d769e50015d8c864"
+    let baseURLString = "https://api-v2launch.trakt.tv"
+    
     private let manager: Alamofire.Manager
     
     init() {
@@ -22,7 +25,7 @@ class TraktClient {
         headers["Accept-Encoding"] = "gzip"
         headers["Content-Type"] = "application/json"
         headers["trakt-api-version"] = "2"              //Version control //This is initiations to trakt-api
-        headers["trakt-api-key"] = Router.clientId      //Client APP key  //This is initiations to trakt-api
+        headers["trakt-api-key"] = self.clientId             //Client APP key  //This is initiations to trakt-api
         configuration.HTTPAdditionalHeaders = headers
         
         manager = Manager(configuration: configuration)
@@ -30,7 +33,7 @@ class TraktClient {
     
     func getMovies(completionHandler:  (([Show]) -> ())){
         
-        let router = Router.GetShows
+        let router = getMoviesRoute()
         manager.request(router).responseJSON { response in
             var shows = [Show]()
             
@@ -44,36 +47,24 @@ class TraktClient {
             completionHandler(shows)
         }
     }
-}
 
-//This enum is renponsable for manager what kind of request
-//This have a URLRequestConvertible for each of request
-private enum Router: URLRequestConvertible {
     
-    static let clientId = "395ee40b0f30abc5ee38ba3420922a0fa6a1edb15f9529f7d769e50015d8c864"
-    static let baseURLString = "https://api-v2launch.trakt.tv"
     
-    case GetShows
-    
-    var URLRequest: NSMutableURLRequest {
+    private func getMoviesRoute() -> URLRequestConvertible {
         
-        let (path, parameters, method): (String, [String : AnyObject]?, Alamofire.Method) = {
-            switch self {
-            case .GetShows:
-                
-                let calendar = NSCalendar.currentCalendar()
-                let day = calendar.component(.Day, fromDate: NSDate())
-                let month = calendar.component(.Month, fromDate: NSDate())
-                let year = calendar.component(.Year, fromDate: NSDate())
-                let date = "\(year)-\(month)-\(day)"
-                
-                return ("calendars/all/shows", ["extended": "images", "start_date":date, "days": "1"],  .GET)
-            }
-        }()
-
-        let url = NSURL(string: Router.baseURLString)!
+        let path = "calendars/all/shows"
+        
+        let calendar = NSCalendar.currentCalendar()
+        let day = calendar.component(.Day, fromDate: NSDate())
+        let month = calendar.component(.Month, fromDate: NSDate())
+        let year = calendar.component(.Year, fromDate: NSDate())
+        let date = "\(year)-\(month)-\(day)"
+        
+        let parameters = ["extended": "images", "start_date":date, "days": "1"]
+        
+        let url = NSURL(string: baseURLString)!
         let urlRequest = NSMutableURLRequest(URL: url.URLByAppendingPathComponent(path))
-        urlRequest.HTTPMethod = method.rawValue
+        urlRequest.HTTPMethod  = Alamofire.Method.GET.rawValue
         
         let encoding = Alamofire.ParameterEncoding.URL
         return encoding.encode(urlRequest, parameters: parameters).0
