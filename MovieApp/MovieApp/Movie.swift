@@ -18,8 +18,8 @@ extension Movie: Decodable {
     
     static func decode(json: JSON) -> Movie? {
         
-        let thumbnail = json["movie"]["images"]["poster"]["medium"].URL
-        let name = json["movie"]["title"].string
+        let thumbnail = json["show"]["images"]["poster"]["medium"].URL
+        let name = json["show"]["title"].string
         
         return Movie(thumbnail: thumbnail, name:name);
     }

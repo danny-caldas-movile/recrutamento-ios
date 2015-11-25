@@ -60,8 +60,7 @@ private enum Router: URLRequestConvertible {
         let (path, parameters, method): (String, [String : AnyObject]?, Alamofire.Method) = {
             switch self {
             case .GetMovies:
-                
-                return ("movies/trending", ["extended": "images"],  .GET)
+                return ("calendars/all/shows", ["extended": "images", "start_date":"2015-11-01", "days": "7"],  .GET)
             }
         }()
         

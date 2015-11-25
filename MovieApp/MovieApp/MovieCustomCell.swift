@@ -13,6 +13,11 @@ class MovieCustomCell: UICollectionViewCell {
     @IBOutlet weak var posterImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        posterImageView.pin_cancelImageDownload()
+        posterImageView.image = nil
+    }
     
     func loadCellForObject(movie: Movie) {
         posterImageView.pin_setImageFromURL(movie.thumbnail)
