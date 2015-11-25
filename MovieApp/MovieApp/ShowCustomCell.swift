@@ -19,7 +19,6 @@ class ShowCustomCell: UICollectionViewCell {
     }
     
     func loadCellForObject(show: Show) {
-        //posterImageView.pin_setImageFromURL(movie.thumbnail)
         posterImageView.tintColor = UIColor.lightGrayColor()
         posterImageView.pin_setImageFromURL(show.thumbnail, placeholderImage: UIImage(named: "tvShow"))
         titleLabel.text = show.title;

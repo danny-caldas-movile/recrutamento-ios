@@ -47,8 +47,6 @@ class TraktClient {
             completionHandler(shows)
         }
     }
-
-    
     
     private func getMoviesRoute() -> URLRequestConvertible {
         
